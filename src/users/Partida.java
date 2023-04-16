@@ -34,7 +34,7 @@ public class Partida {
     }
 
     public String toString(){
-        return "Fecha: " + this.date + "Puntuación: " + this.puntuacion + "Jugador: " + this.player.getNombre() + "\n";
+        return "Fecha: " + this.date + " Puntuación: " + this.puntuacion + " Jugador: " + this.player.getNombre();
     }
 
     public boolean equals(Object o){

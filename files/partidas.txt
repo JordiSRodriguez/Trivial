@@ -1,4 +1,3 @@
 Fecha: Sun Apr 16 21:21:56 CEST 2023 Puntuación: 0 Jugador: Pepe
-Fecha: Sun Apr 16 21:24:14 CEST 2023 Puntuación: 4 Jugador: Pepe
-Fecha: Sun Apr 16 21:29:29 CEST 2023 Puntuación: 5 Jugador: Pepe
-Fecha: Sun Apr 16 21:49:34 CEST 2023 Puntuación: 5 Jugador: Jordi
+Fecha: Sun Apr 16 22:35:55 CEST 2023 Puntuación: 4 Jugador: Jordi
+Fecha: Sun Apr 16 22:37:05 CEST 2023 Puntuación: 3 Jugador: Jordi2

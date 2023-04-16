@@ -4,6 +4,7 @@ import preguntas.Opcion;
 import preguntas.Pregunta;
 import users.Partida;
 import users.User;
+
 import java.io.*;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ public class GestionaFicheros {
     private static final File fileUser = new File("files/user.dat");
     private static final File filePartidas = new File("files/partidas.txt");
 
-    public static void guardaUsers(ArrayList<User> users) {
+    /*public static void guardaUsers(ArrayList<User> users) {
         FileOutputStream fos = null;
         ObjectOutputStream oos = null;
         try {
@@ -37,9 +38,18 @@ public class GestionaFicheros {
                 }
             }
         }
+    }*/
+
+    public static void guardaUsers(ArrayList<User> users) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileUser))) {
+            oos.writeObject(users);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    public static ArrayList<User> cargaUsers() {
+
+    /*public static ArrayList<User> cargaUsers() {
         ObjectInputStream ois = null;
         FileInputStream fis = null;
         ArrayList<User> userArrayList = new ArrayList<>();
@@ -47,7 +57,7 @@ public class GestionaFicheros {
             fis = new FileInputStream(fileUser);
             ois = new ObjectInputStream(fis);
             userArrayList = (ArrayList<User>) ois.readObject();
-        } catch (EOFException e){
+        } catch (EOFException e) {
 
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
@@ -68,6 +78,17 @@ public class GestionaFicheros {
             }
         }
         return userArrayList;
+    }*/
+
+    public static ArrayList<User> cargaUsers() {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileUser))) {
+            return (ArrayList<User>) ois.readObject();
+        } catch (EOFException e) {
+            return new ArrayList<>();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 
     public static ArrayList<Pregunta> cargaPreguntas() throws IOException {
