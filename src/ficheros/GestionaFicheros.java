@@ -13,33 +13,6 @@ public class GestionaFicheros {
     private static final File fileUser = new File("files/user.dat");
     private static final File filePartidas = new File("files/partidas.txt");
 
-    /*public static void guardaUsers(ArrayList<User> users) {
-        FileOutputStream fos = null;
-        ObjectOutputStream oos = null;
-        try {
-            fos = new FileOutputStream(fileUser);
-            oos = new ObjectOutputStream(fos);
-            oos.writeObject(users);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            if (oos != null) {
-                try {
-                    oos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (fos != null) {
-                try {
-                    fos.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-    }*/
-
     public static void guardaUsers(ArrayList<User> users) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileUser))) {
             oos.writeObject(users);
@@ -47,38 +20,6 @@ public class GestionaFicheros {
             e.printStackTrace();
         }
     }
-
-
-    /*public static ArrayList<User> cargaUsers() {
-        ObjectInputStream ois = null;
-        FileInputStream fis = null;
-        ArrayList<User> userArrayList = new ArrayList<>();
-        try {
-            fis = new FileInputStream(fileUser);
-            ois = new ObjectInputStream(fis);
-            userArrayList = (ArrayList<User>) ois.readObject();
-        } catch (EOFException e) {
-
-        } catch (IOException | ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            if (ois != null) {
-                try {
-                    ois.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-            if (fis != null) {
-                try {
-                    fis.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
-        return userArrayList;
-    }*/
 
     public static ArrayList<User> cargaUsers() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileUser))) {
