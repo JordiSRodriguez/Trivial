@@ -4,32 +4,46 @@ public class Opcion {
     private String enunciado;
     private boolean correcta;
 
+    /**
+     * Constructor de la clase Opcion
+     * @param enunciado
+     * @param correcta
+     */
     public Opcion(String enunciado, boolean correcta){
         this.enunciado = enunciado;
         this.correcta = correcta;
     }
 
+    /**
+     * Devuelve el enunciado de la opcion
+     * @return String con el enunciado de la opcion
+     */
     public String getEnunciado(){
         return this.enunciado;
     }
 
+    /**
+     * Devuelve si la opcion es correcta o no
+     * @return true si es correcta, false si no lo es
+     */
     public boolean getCorrecta(){
         return this.correcta;
     }
 
-    public void setEnunciado(String enunciado){
-        this.enunciado = enunciado;
-    }
-
-    public void setCorrecta(boolean correcta){
-        this.correcta = correcta;
-    }
-
+    /**
+     * Modifica el enunciado de la opcion
+     */
     @Override
     public String toString() {
         return enunciado;
     }
 
+    /**
+     * Compara dos opciones y devuelve true
+     * si son iguales y false si no lo son
+     * @param o Object con la opcion a comparar
+     * @return true si son iguales y false si no lo son
+     */
     public boolean equals(Object o){
         if(o instanceof Opcion){
             Opcion op = (Opcion) o;

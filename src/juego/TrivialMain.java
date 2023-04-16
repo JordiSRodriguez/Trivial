@@ -12,6 +12,10 @@ import java.util.Scanner;
 public class TrivialMain {
     private static ArrayList<User> users = new ArrayList<>();
 
+    /**
+     * Método principal que muestra el menú principal
+     * @param args Argumentos de la línea de comandos (no se usan)
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         while (true) {
@@ -43,6 +47,12 @@ public class TrivialMain {
         }
     }
 
+    /**
+     * Método que registra un nuevo jugador en el sistema
+     * y lo guarda en el fichero de usuarios registrados
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     private static void registroPlayer() throws IOException, ClassNotFoundException {
         Scanner sc = new Scanner(System.in);
         users = GestionaFicheros.cargaUsers();
@@ -69,6 +79,12 @@ public class TrivialMain {
         }
     }
 
+    /**
+     * Método que registra un nuevo administrador en el sistema y lo guarda
+     * en el fichero de usuarios registrados si la contraseña tiene al menos
+     * 8 caracteres y si no existe ya un usuario con ese nombre de usuario
+     * @throws IOException
+     */
     private static void registroAdmin() throws IOException {
         Scanner sc = new Scanner(System.in);
         users = GestionaFicheros.cargaUsers();
@@ -91,6 +107,13 @@ public class TrivialMain {
         }
     }
 
+    /**
+     * Método que inicia sesión en el sistema y muestra el menú de juego
+     * o de administración según el tipo de usuario que sea
+     * el que inicie sesión en el sistema
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     private static void inicioSesion() throws IOException, ClassNotFoundException {
         Scanner sc = new Scanner(System.in);
         users = GestionaFicheros.cargaUsers();

@@ -18,11 +18,20 @@ public class TrivialJuego {
     private Player player;
     private Partida partida;
 
+    /**
+     * Constructor de la clase TrivialJuego
+     * @param player Jugador que va a jugar
+     */
     public TrivialJuego(Player player) {
         this.player = player;
         partida = new Partida(player);
     }
 
+    /**
+     * Método que muestra las partidas jugadas y los usuarios registrados
+     * por pantalla y guarda la partida en el fichero de partidas jugadas
+     * @throws IOException Si hay algún problema con el fichero
+     */
     public void jugar() throws IOException {
         partida = new Partida(player);
         preguntas = GestionaFicheros.cargaPreguntas();

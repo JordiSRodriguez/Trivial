@@ -13,6 +13,10 @@ public class GestionaFicheros {
     private static final File fileUser = new File("files/user.dat");
     private static final File filePartidas = new File("files/partidas.txt");
 
+    /**
+     * Guarda los usuarios en un fichero binario con ObjectOutputStream y un ArrayList de usuarios
+     * @param users ArrayList de usuarios a guardar
+     */
     public static void guardaUsers(ArrayList<User> users) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fileUser))) {
             oos.writeObject(users);
@@ -21,6 +25,12 @@ public class GestionaFicheros {
         }
     }
 
+    /**
+     * Carga los usuarios de un fichero binario gracias a ObjectInputStream y devuelve un ArrayList de usuarios
+     * @return ArrayList de usuarios cargados
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
     public static ArrayList<User> cargaUsers() {
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fileUser))) {
             return (ArrayList<User>) ois.readObject();
@@ -32,6 +42,10 @@ public class GestionaFicheros {
         }
     }
 
+    /**
+     * Guarda las preguntas en un fichero de texto con BufferedWriter
+     * @throws IOException
+     */
     public static ArrayList<Pregunta> cargaPreguntas() throws IOException {
         ArrayList<Pregunta> preguntas = new ArrayList<>();
         if (!filePreguntas.exists()) {
@@ -51,6 +65,11 @@ public class GestionaFicheros {
         return preguntas;
     }
 
+    /**
+     * Guarda las partidas en un fichero de texto con BufferedWriter
+     * @param partida Partida a guardar
+     * @throws IOException
+     */
     public static void guardaPartida(Partida partida) throws IOException {
         if (!filePartidas.exists()) {
             filePartidas.createNewFile();
@@ -61,6 +80,11 @@ public class GestionaFicheros {
         bw.close();
     }
 
+    /**
+     * Carga las partidas de un fichero de texto con BufferedReader
+     * @return ArrayList de partidas cargadas
+     * @throws IOException
+     */
     public static ArrayList<String> leePartidas() throws IOException {
         ArrayList<String> partidas = new ArrayList<>();
         if (!filePartidas.exists()) {
