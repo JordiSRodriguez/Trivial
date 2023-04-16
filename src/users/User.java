@@ -2,6 +2,10 @@ package users;
 
 import java.io.Serializable;
 
+/**
+ * Clase que representa a un usuario del juego
+ * @author Jordi Sumba
+ */
 public abstract class User implements Comparable<User>, Serializable {
     protected String nombre;
     protected String pass;

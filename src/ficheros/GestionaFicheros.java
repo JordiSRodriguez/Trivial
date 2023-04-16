@@ -8,6 +8,10 @@ import users.User;
 import java.io.*;
 import java.util.ArrayList;
 
+/**
+ * Clase que gestiona los ficheros de preguntas, usuarios y partidas de la aplicación
+ * @author Jordi Sumba
+ */
 public class GestionaFicheros {
     private static final File filePreguntas = new File("files/preguntas.txt");
     private static final File fileUser = new File("files/user.dat");

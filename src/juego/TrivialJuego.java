@@ -12,6 +12,10 @@ import java.util.Scanner;
 
 import static java.util.Collections.shuffle;
 
+/**
+ * Clase que representa el juego Trivial
+ * @author Jordi Sumba
+ */
 public class TrivialJuego {
 
     private ArrayList<Pregunta> preguntas;

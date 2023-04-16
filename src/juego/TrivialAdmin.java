@@ -5,6 +5,10 @@ import users.User;
 
 import java.io.IOException;
 
+/**
+ * Clase que administra el juego trivial
+ * @author Jordi Sumba
+ */
 public class TrivialAdmin implements Comparable<User> {
     public TrivialAdmin(User user) {
     }

@@ -2,6 +2,10 @@ package users;
 
 import java.io.Serializable;
 
+/**
+ * Clase que representa a un jugador del juego
+ * @author Jordi Sumba
+ */
 public class Player extends User implements Serializable {
 
     /**

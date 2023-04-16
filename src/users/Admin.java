@@ -2,6 +2,10 @@ package users;
 
 import java.io.Serializable;
 
+/**
+ * Clase que representa a un admin del juego
+ * @author Jordi Sumba
+ */
 public class Admin extends User implements Serializable {
 
     /**

@@ -1,5 +1,10 @@
 package preguntas;
 
+/**
+ * Clase Opcion
+ * Contiene el enunciado de la opcion y si es correcta o no
+ * @author Jordi Sumba
+ */
 public class Opcion {
     private String enunciado;
     private boolean correcta;

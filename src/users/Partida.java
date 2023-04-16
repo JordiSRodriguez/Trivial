@@ -2,6 +2,11 @@ package users;
 
 import java.util.Date;
 
+/**
+ * Clase que representa una partida
+ * de un jugador
+ * @author Jordi Sumba
+ */
 public class Partida {
     private Date date;
     private int puntuacion;

@@ -9,6 +9,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * Clase principal que muestra el menú principal
+ * y permite registrar un nuevo usuario, iniciar sesión
+ * o salir del juego
+ * @author Jordi Sumba
+ */
 public class TrivialMain {
     private static ArrayList<User> users = new ArrayList<>();
 

@@ -1,5 +1,10 @@
 package preguntas;
 
+/**
+ * Clase Pregunta
+ * Contiene la pregunta y las opciones de la pregunta
+ * @author Jordi Sumba
+ */
 public class Pregunta {
     private String pregunta;
     private Opcion[] opciones;
